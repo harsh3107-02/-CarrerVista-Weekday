@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 20rem;
+    flex-wrap: nowrap;
     -webkit-box-shadow: -2px 1px 16px -6px rgba(0,0,0,0.75);
 -moz-box-shadow: -2px 1px 16px -6px rgba(0,0,0,0.75);
 box-shadow: -2px 1px 16px -6px rgba(0,0,0,0.75);
@@ -10,6 +11,7 @@ border-radius: 1rem;
 text-align: left;
 padding-left: 0.8rem;
 line-height: 0%;
+
 }
 .Internal_CompanyInfo{
     display: flex;
@@ -56,6 +58,9 @@ line-height: 0%;
     color: white;
     font-size: medium;
     font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ApplyButton{
     width: 90%;
@@ -68,7 +73,9 @@ line-height: 0%;
     color: black;
     font-size: medium;
     font-weight: 550;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .material_icon{
     background-color: green;
@@ -84,3 +91,27 @@ line-height: 0%;
     display: flex;
     align-items: center;
 }
+select {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.5rem;
+  }
+
+/* styles.css */
+
+/* styles.css */
+
+.JobDescription {
+    max-height: 150px; /* Adjust the height as needed */
+    overflow-y: auto;
+  }
+  
+  .SeeMoreButton {
+    display: block; /* Ensure the button takes up full width */
+    margin-top: 5px; /* Add some spacing */
+    color: blue;
+    cursor: pointer;
+  }
+  
+  
+  

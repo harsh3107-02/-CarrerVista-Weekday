@@ -1,76 +1,84 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/search.css";
 
+// SearchBar component for filtering job criteria
 const SearchBar = (props) => {
-    const [JobCriteria, setJobCriteria] = useState({
+    // State to hold job criteria
+    const [jobCriteria, setJobCriteria] = useState({
         Role: "",
-        No_Of_Employee: "",
-        Experience: "",
+        Salary_Currency: "",
+        Min_Experience: "",
         Remote: "",
         Min_Salary: "",
         Company_Name: "",
     });
 
+    // Handler for input change
     const handleChange = (e) => {
         const { name, value } = e.target;
+        // Updating job criteria state
         setJobCriteria((prevState) => ({
             ...prevState,
             [name]: value,
         }));
     };
 
+    // Handler for search button click
     const handleSearch = async () => {
-        await props.JobFilter(JobCriteria);
+        await props.JobFilter(jobCriteria); // Calling parent component's filter function
     };
-    useEffect(()=>{
-      let timerOut=setTimeout(()=>{
-         props.JobFilter(JobCriteria)
-      },800)
-      return ()=>clearTimeout(timerOut)
-    },[JobCriteria.Company_Name])
 
+    // Effect to trigger search after a short delay when Company_Name changes
+    useEffect(() => {
+        let timerOut = setTimeout(() => {
+            props.JobFilter(jobCriteria); // Calling parent component's filter function
+        }, 800);
+        return () => clearTimeout(timerOut); // Clearing timeout to avoid memory leaks
+    }, [jobCriteria.Company_Name]); // Dependency array to run the effect only when Company_Name changes
+
+    // JSX for SearchBar component
     return (
-        <div>
-            <select name="Role" onChange={handleChange} onClick={handleSearch} value={JobCriteria.Role} className="Selectab">
-                <option value="" disabled hidden>Roles |</option>
+        <div className="Search_Container">
+            {/* Dropdown for selecting job role */}
+            <select name="Role" onChange={handleChange} onClick={handleSearch} value={jobCriteria.Role} className="Selectab">
+                <option value="">Roles</option>
                 <option value="Frontend">Frontend</option>
                 <option value="Backend">Backend</option>
                 <option value="Tech Lead">Tech Lead</option>
                 <option value="Android">Android</option>
                 <option value="IOS">IOS</option>
             </select>
-            <select name="No_Of_Employee" onChange={handleChange} value={JobCriteria.No_Of_Employee} className="Selectab">
-                <option value="" disabled hidden>Number of Employees</option>
-                <option>1-10 employees</option>
-                <option>11-50 employees</option>
-                <option>51-200 employees</option>
-                <option>201-1000 employees</option>
-                <option>1001+ employees</option>
+            {/* Dropdown for selecting minimum experience */}
+            <select name="Min_Experience" onChange={handleChange} onClick={handleSearch} value={jobCriteria.Min_Experience} className="Selectab">
+                <option value="">Min Experience</option>
+                <option value="0">Intern</option>
+                <option value="2">Entry Level</option>
+                <option value="3">Associate</option>
+                <option value="4">Senior</option>
+                <option value="6">Director</option>
             </select>
-            <select name="Experience" onChange={handleChange} value={JobCriteria.Experience} className="Selectab">
-                <option value="" disabled hidden>Experience</option>
-                <option>Intern</option>
-                <option>Entry Level</option>
-                <option>Associate</option>
-                <option>Senior</option>
-                <option>Director</option>
+            {/* Dropdown for selecting salary currency */}
+            <select name="Salary_Currency" onChange={handleChange} onClick={handleSearch} value={jobCriteria.Salary_Currency} className="Selectab">
+                <option value="">Salary Currency</option>
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
             </select>
-            <select name="Remote" onChange={handleChange} value={JobCriteria.Remote} className="Selectab">
-                <option value="" disabled hidden>Remote</option>
-                <option>on-Site</option>
-                <option>Hybrid</option>
-                <option>Remote</option>
+            {/* Dropdown for selecting job location */}
+            <select name="Remote" onChange={handleChange} onClick={handleSearch} value={jobCriteria.Remote} className="Selectab">
+                <option value="">Location</option>
+                <option value="on-Site">on-Site</option>
+                <option value="Remote">Remote</option>
             </select>
-            <select name="Min_Salary" onChange={handleChange} value={JobCriteria.Min_Salary} className="Selectab">
-                <option value="" disabled hidden>Minimum Base Pay Salary</option>
-                <option>0-3 Lakhs</option>
-                <option>3-10 Lakhs</option>
-                <option>10-25 Lakhs</option>
-                <option>25-40 Lakhs</option>
-                <option>40-70 Lakhs</option>
-                <option>70-100 Lakhs</option>
+            {/* Dropdown for selecting minimum salary */}
+            <select name="Min_Salary" onChange={handleChange} onClick={handleSearch} value={jobCriteria.Min_Salary} className="Selectab">
+                <option value="">Minimum Salary</option>
+                <option value="25">25 Lakhs</option>
+                <option value="40">40 Lakhs</option>
+                <option value="70">70 Lakhs</option>
+                <option value="100">100 Lakhs</option>
             </select>
-            <input placeholder="Search Company Name" name="Company_Name" onChange={handleChange} onClick={handleSearch} value={JobCriteria.Company_Name} className="Selectab" />
+            {/* Input for searching company name */}
+            <input placeholder="Search Company Name" name="Company_Name" onChange={handleChange} onClick={handleSearch} value={jobCriteria.Company_Name} className="Selectab" />
         </div>
     );
 };

@@ -1,9 +1,15 @@
-.Selectab{
-    margin: 0.5rem 0.5rem 2rem;
+.Selectab {
+    margin: 0.5rem 0.5rem 0.8rem;
     width: 13rem;
     height: 3rem;
-    border:3px solid lightgray;
+    border: 3px solid lightgray;
     color: rgb(100, 100, 100);
-    
-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* CSS for Search_Container class */
+.Search_Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

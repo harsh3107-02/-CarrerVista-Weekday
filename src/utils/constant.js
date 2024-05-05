@@ -1,0 +1,1 @@
+export const JobAPI="https://api.weekday.technology/adhoc/getSampleJdJSON"

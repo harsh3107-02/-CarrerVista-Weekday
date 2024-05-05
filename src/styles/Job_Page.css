@@ -1,5 +1,17 @@
-.Inside_Container{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 2rem;
+
+/* CSS styles for container classes */
+ /* Container for job cards */
+.Inside_Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual job card container */
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
