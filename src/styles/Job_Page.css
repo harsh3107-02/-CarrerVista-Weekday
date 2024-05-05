@@ -1,0 +1,5 @@
+.Inside_Container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
