@@ -11,18 +11,21 @@ border-radius: 1rem;
 text-align: left;
 padding-left: 0.8rem;
 line-height: 0%;
+padding-left: 20px;
 
 }
 .Internal_CompanyInfo{
     display: flex;
     align-items: flex-start;
     margin: 0px 0.8rem;
-    padding-left: 10px;
+    padding:0px 5px;
 }
 .CompanyLogo{
     width: 50px;
     height: 50px;
     object-fit: fill;
+    position: relative;
+    top: 15px;
 }
 .CompanyDetails{
     margin-left: 0.7rem;
@@ -39,10 +42,12 @@ line-height: 0%;
     font-size: 20px;
     color: black;
     font-weight: 400;
+    padding:0px 5px;
 }
 .JobLocation{
     color: black;
     font-size: 17px;
+    padding:0px 5px;
 }
 .SalaryRange{
     color: #000928;
@@ -90,6 +95,7 @@ line-height: 0%;
     color: black;
     display: flex;
     align-items: center;
+    padding:0px 5px;
 }
 select {
     font-size: 16px;
@@ -97,21 +103,49 @@ select {
     padding: 0.5rem;
   }
 
-/* styles.css */
 
-/* styles.css */
+  .see-more-btn{
+    color: #0033ed;
+    text-align: center;
+    transition: .4s;
+    position: relative;
+    bottom: 1rem;
+}
 
-.JobDescription {
-    max-height: 150px; /* Adjust the height as needed */
-    overflow-y: auto;
-  }
-  
-  .SeeMoreButton {
-    display: block; /* Ensure the button takes up full width */
-    margin-top: 5px; /* Add some spacing */
-    color: blue;
+.see-more-btn:hover{
     cursor: pointer;
-  }
-  
-  
-  
+    filter: brightness(80%);
+    scale: 1.1;
+}
+.see-more-btn .arrow{
+    cursor: pointer;
+    display: inline-block;
+    scale: 1.8 1;
+    margin-left:15px;
+    
+}
+.JobDescription{
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    padding: 0 20px;
+    transition: .4s;
+}
+.JobDescription .remove-gradient-color::before{
+    opacity: 0;
+}
+.JobDescription::before{
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent,#fff);
+    opacity: 1;
+    transition: .8s;
+}
+.JobDescription .remove-gradient-color .see-more-btn .arrow{
+    rotate: 180deg;
+}
+.AboutCompany{
+    margin: 0 2rem 0 0;
+}
