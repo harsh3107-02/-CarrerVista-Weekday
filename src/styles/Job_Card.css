@@ -1,0 +1,86 @@
+.JobPostContainer{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    -webkit-box-shadow: -2px 1px 16px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 1px 16px -6px rgba(0,0,0,0.75);
+box-shadow: -2px 1px 16px -6px rgba(0,0,0,0.75);
+margin:1.2rem;
+border-radius: 1rem;
+text-align: left;
+padding-left: 0.8rem;
+line-height: 0%;
+}
+.Internal_CompanyInfo{
+    display: flex;
+    align-items: flex-start;
+    margin: 0px 0.8rem;
+    padding-left: 10px;
+}
+.CompanyLogo{
+    width: 50px;
+    height: 50px;
+    object-fit: fill;
+}
+.CompanyDetails{
+    margin-left: 0.7rem;
+    position: static;
+    bottom: 20px;
+    text-align: left;
+}
+.CompanyName{
+    font-size:14px;
+    font-weight: 500;
+    color:grey;
+}
+.JobRole{
+    font-size: 20px;
+    color: black;
+    font-weight: 400;
+}
+.JobLocation{
+    color: black;
+    font-size: 17px;
+}
+.SalaryRange{
+    color: #000928;
+}
+.SaveButton{
+    width: 90%;
+    height: 2.5rem;
+    margin: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    border-style: none;
+    background-color: #0033ED;
+    color: white;
+    font-size: medium;
+    font-weight: 550;
+}
+.ApplyButton{
+    width: 90%;
+    height: 2.5rem;
+    margin: 0rem 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    border-style: none;
+    background-color: #08F69A;
+    color: black;
+    font-size: medium;
+    font-weight: 550;
+
+}
+.material_icon{
+    background-color: green;
+}
+.PostedDate{
+    border-radius: 1rem;
+    border: 1px solid grey;
+    padding: 0.2rem;
+    width: 9rem;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    align-items: center;
+}
